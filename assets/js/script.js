@@ -5,31 +5,58 @@ var dateMom = moment().format('dddd, MMMM Do');
 $("#currentDay").replaceWith(dateMom);
 
 let now = moment();
-console.log(now.format("hh:mm:ss"));
+//console.log(now.format("hh:mm:ss"));
 
-console.log(moment().format('LT'));
+//console.log(moment().format('LT'));
 
 var createTask = function(taskText, taskList) {
-   $("#modalTaskDescription" + taskList).val(taskText);    
+   $("#modalTaskDescription" + taskList).val(taskText);  
+     
 };
 
-var auditTask = function(taskEl) {
-  
+
+var auditTask = function(taskList) {
+    var format = 'HH:mm'
+S
+    //var timeDiv = moment('11:00:00',format);
+
+    // remove 'hour' from index
+    var hour = taskList.replace("hour", "") + ":00";
+
+    var timeDiv = moment(hour,format);
+    var lowerTime = (hour.replace(":00", "")-1) + ":59";
+    var lowerMom = moment(lowerTime, format);
+    var upperTime = (parseInt(hour.replace(":00", ""))+1) + ":00";
+    var upperMom = moment(upperTime, format);
+
+    //var timeDiv = moment(timeDiv,format);
+console.log(lowerTime);
+console.log(timeDiv);
+console.log(upperTime);
+
     // apply new class if task is near/over due date
-    if (moment().isAfter(time)) {
-      $(taskEl).addClass("list-group-item-danger");
-    } else if (Math.abs(moment().diff(time, "days")) <= 2) {
-      $(taskEl).addClass("list-group-item-warning");
-    }
+    //if (moment(timeDiv).isBetween(lowerMom, upperMom, 'minute')) {
+        if (moment() > lowerMom && moment() < upperMom) {
+        $("#modalTaskDescription" + taskList).removeClass("bg-secondary");
+        $("#modalTaskDescription" + taskList).addClass("present");
+    } else if (moment().isBefore(timeDiv)) {
+        $("#modalTaskDescription" + taskList).removeClass("bg-secondary");
+        $("#modalTaskDescription" + taskList).addClass("future");
+    } else if (moment().isAfter(timeDiv)) {
+        // remove any old classes from element
+        $("#modalTaskDescription" + taskList).removeClass("bg-secondary");
+        $("#modalTaskDescription" + taskList).addClass("past");
   };
+    }
+    
 
 var loadTasks = function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
     // if nothing in localStorage, create a new object to track all task status arrays
     if (!tasks) {
         tasks = {
-        hour1: [],
-        hour2: [],
+        hour11: [],
+        hour12: [],
         hour3: [],
         hour4: [],
         hour5: [],
@@ -45,7 +72,7 @@ var loadTasks = function() {
       // then loop over sub-array
       arr.forEach(function(task) {
         createTask(task.text, list);
-        //auditTask(task.text, list);
+        auditTask(list);
       });
     });
 };
@@ -57,10 +84,10 @@ var saveTasks = function() {
 // save button was clicked
 $("#task-form-modal .btn-save1").click(function() {
     // get form values
-    var taskText = $("#modalTaskDescriptionhour1").val();
+    var taskText = $("#modalTaskDescriptionhour11").val();
     var taskDate = 0;
     // save in tasks array
-    tasks.hour1.push({
+    tasks.hour11.push({
     text: taskText,
     });
     saveTasks();
@@ -69,10 +96,10 @@ $("#task-form-modal .btn-save1").click(function() {
 // save button was clicked
 $("#task-form-modal .btn-save2").click(function() {
     // get form values
-    var taskText = $("#modalTaskDescriptionhour2").val();
+    var taskText = $("#modalTaskDescriptionhour12").val();
     var taskDate = 0;
     // save in tasks array
-    tasks.hour2.push({
+    tasks.hour12.push({
     text: taskText,
     });
     saveTasks();
