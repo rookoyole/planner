@@ -17,6 +17,7 @@ textarea{
 
 form {
   width: 100%;
+  margin: -64px 0 0 0;
 }
 
 .jumbotron {
@@ -77,3 +78,16 @@ form {
   color:rgb(27, 7, 7);
 }
 
+.form-control {
+  font-size: 1.5rem;
+  height: auto;
+}
+
+textarea.form-control {
+  height: 160px;
+}
+
+h4 {
+  height: 160px;
+  margin: -32px 0 0 0;
+}

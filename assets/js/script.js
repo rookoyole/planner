@@ -3,41 +3,23 @@ var tasks = {};
 //const moment = require('moment');
 var dateMom = moment().format('dddd, MMMM Do');
 $("#currentDay").replaceWith(dateMom);
-
 let now = moment();
-//console.log(now.format("hh:mm:ss"));
-
-//console.log(moment().format('LT'));
 // --------------------------------------------------------------------------------------------------------------- //
 var createTask = function(taskText, taskList) {
    $("#modalTaskDescription" + taskList).val(taskText);  
    //debugger
-   if (taskText === "") {
-       
-   }
    auditTask(taskList);
 };
 // --------------------------------------------------------------------------------------------------------------- //
 var auditTask = function(taskList) {
     var format = 'HH:mm'
-
-    //var timeDiv = moment('11:00:00',format);
-console.log(taskList);
-console.log(format);
     // remove 'hour' from index
     var hour = taskList.replace("hour", "") + ":00";
-
     var timeDiv = moment(hour,format);
     var lowerTime = (hour.replace(":00", "")-1) + ":59";
     var lowerMom = moment(lowerTime, format);
     var upperTime = (parseInt(hour.replace(":00", ""))+1) + ":00";
     var upperMom = moment(upperTime, format);
-
-    //var timeDiv = moment(timeDiv,format);
-console.log(lowerTime);
-console.log(timeDiv);
-console.log(upperTime);
-
     // apply new class if task is near/over due date
     //if (moment(timeDiv).isBetween(lowerMom, upperMom, 'minute')) {
         if (moment() > lowerMom && moment() < upperMom) {
@@ -82,7 +64,7 @@ var loadTasks = function() {
       });
     });
 };
-
+// --------------------------------------------------------------------------------------------------------------- //
 var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 };
