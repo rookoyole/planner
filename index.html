@@ -18,7 +18,11 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,13 +30,319 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="lead">- To add task, enter text and press Save - </p>
+      <p class="lead">- To remove task, delete text and press Save - </p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container"></div>
       <!-- Timeblocks go here -->
+      <main class="col-12 col-lg-12 d-flex flex-column " id="task-form-modal">
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                9AM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour1" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" >
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save1"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                10AM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour2" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save2"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                11AM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour3" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save3"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                12PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour4" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save4"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                1PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour5" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save5"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                2PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour6" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save6"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                3PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour7" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save7"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                4PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour8" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save8"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-5 row justify-content-center">
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="hour">
+              <h4 class="bg-light text-dark d-flex align-items-center">
+                5PM
+              </h4> 
+              <ul id="list" class="list-group1 list-group-flush">
+              </ul>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-8 mb-3">
+            <div class="row">
+                <form>
+                  <div class="form-group g-secondary text-dark d-flex align-items-center">
+                    <textarea class="form-control bg-secondary text-dark d-flex align-items-center" id="modalTaskDescriptionhour9" rows="4"></textarea>
+                  </div>
+                </form>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-12 col-md-6 col-xl-2 mb-3">
+            <div class="saveBtn" id="task-form-modal">
+              <!-- <button type="button" class="btn btn-save">Save changes</button>-->
+              <!--<img  class="btn-save"src="./assets/images/save.svg" alt="Save icon" />-->
+              <i id="btn-save" class="fas fa-save btn-save9"></i>
+              <ul id="list-toDo" class="list-group3 list-group-flush">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </main>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
