@@ -70,15 +70,13 @@
 
 [![Product Name Screen Shot][product-screenshot]](assets/images/screenshot.png)
 <br />
-The purpose of this project was to create a multiple choice code quiz, with a countdown timer and high scores list.
+The purpose of this project was to create a daily planner, with editable, persistent text areas for each hour.
 
 Features:
-* DOM updated program
-* Score based on time left when all questions answered; 10 seconds subracted when a wrong answer is selected
-* 75 second countdown timer
-* Initials and score stored in browser local storage
-* Selected answers checked after selected
-* Updated styling based on screen size
+* Current date shown at top of page
+* Instructions for saving/deleting tasks
+* Editable, persistent text areas for each hour
+* DOM generated Jquery stying based on time of day using Moment.JS
 
 <!-- PROJECT LINKS -->
 ## Project Links
